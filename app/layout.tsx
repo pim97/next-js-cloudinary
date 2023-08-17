@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
+import Link from 'next/link'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -20,7 +21,7 @@ function SideMenu() {
             Discover
           </h2>
           <div className="space-y-1">
-            <Button variant="secondary" className="w-full justify-start">
+            <Button variant="ghost" className="w-full justify-start">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -34,25 +35,7 @@ function SideMenu() {
                 <circle cx="12" cy="12" r="10" />
                 <polygon points="10 8 16 12 10 16 10 8" />
               </svg>
-              Gallery
-            </Button>
-            <Button variant="ghost" className="w-full justify-start">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="mr-2 h-4 w-4"
-              >
-                <rect width="7" height="7" x="3" y="3" rx="1" />
-                <rect width="7" height="7" x="14" y="3" rx="1" />
-                <rect width="7" height="7" x="14" y="14" rx="1" />
-                <rect width="7" height="7" x="3" y="14" rx="1" />
-              </svg>
-              Albums
+              <Link href="/gallery">Gallery</Link>
             </Button>
             <Button variant="ghost" className="w-full justify-start">
               <svg
@@ -71,7 +54,7 @@ function SideMenu() {
                 <path d="M16.2 7.8c2.3 2.3 2.3 6.1 0 8.5" />
                 <path d="M19.1 4.9C23 8.8 23 15.1 19.1 19" />
               </svg>
-              Favorites
+              <Link href="/favorites">Favorites</Link>
             </Button>
           </div>
         </div>
@@ -91,7 +74,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <div className="border-b">
           <div className="flex h-16 items-center px-4 container mx-auto">
-            HI
+            PhotoAlbum
             <div className="ml-auto flex items-center space-x-4">
               <Avatar>
                 <AvatarImage src="https://github.com/shadcn.png" />
